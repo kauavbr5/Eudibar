@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bem-vindo ao Eudibar</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            color: #fff;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 3rem;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.3);
+        }
+        p {
+            font-size: 1.2rem;
+            margin-top: 0;
+            margin-bottom: 2rem;
+            max-width: 400px;
+            line-height: 1.4;
+        }
+        a.btn {
+            background-color: #fff;
+            color: #2575fc;
+            font-weight: 600;
+            padding: 12px 30px;
+            border-radius: 30px;
+            text-decoration: none;
+            box-shadow: 0 5px 15px rgba(37, 117, 252, 0.4);
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        a.btn:hover {
+            background-color: #1e59d1;
+            color: #fff;
+            box-shadow: 0 8px 20px rgba(37, 117, 252, 0.7);
+        }
+        footer {
+            margin-top: auto;
+            font-size: 0.9rem;
+            opacity: 0.7;
+        }
+    </style>
+</head>
+<body>
+    <h1>Bem-vindo ao Eudibar</h1>
+    <p>Seu aplicativo Flask está online e funcionando perfeitamente!</p>
+    <a href="/dashboard" class="btn">Ir para Dashboard</a>
+
+    <footer>
+        &copy; 2025 Eudibar. Todos os direitos reservados.
+    </footer>
+</body>
+</html>
