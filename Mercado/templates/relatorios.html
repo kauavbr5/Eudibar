@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <title>Relatório - Produtos Mais Vendidos</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 40px 20px;
+      color: #333;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      min-height: 100vh;
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 0 auto;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 16px;
+      padding: 40px 30px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    h1 {
+      text-align: center;
+      font-weight: 700;
+      font-size: 2.5rem;
+      margin-bottom: 40px;
+      color: #222;
+      letter-spacing: 1px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 24px;
+      margin-top: 10px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      padding: 20px;
+      text-align: center;
+      transition: transform 0.3s ease;
+      cursor: default;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.15);
+    }
+
+    .card-icon {
+      font-size: 48px;
+      color: #007bff;
+      margin-bottom: 15px;
+    }
+
+    .card-title {
+      font-weight: 600;
+      font-size: 1.25rem;
+      margin-bottom: 8px;
+      color: #111;
+    }
+
+    .card-quantity {
+      font-size: 1.1rem;
+      color: #555;
+      letter-spacing: 0.05em;
+    }
+
+    .botoes {
+      text-align: center;
+      margin-top: 40px;
+    }
+
+    .botoes a {
+      text-decoration: none;
+      margin: 0 10px;
+    }
+
+    .botoes button {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .botoes button:hover {
+      background-color: #0056b3;
+    }
+
+    .mensagem {
+      text-align: center;
+      font-size: 18px;
+      color: #666;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>📈 Produtos Mais Vendidos</h1>
+
+    {% if mais_vendidos %}
+    <div class="cards">
+      {% for produto in mais_vendidos %}
+      <div class="card">
+        <div class="card-icon">🛒</div>
+        <div class="card-title">{{ produto[0] }}</div>
+        <div class="card-quantity">{{ produto[1] }} unidades vendidas</div>
+      </div>
+      {% endfor %}
+    </div>
+    {% else %}
+    <div class="mensagem">Nenhum produto foi vendido ainda.</div>
+    {% endif %}
+
+    <div class="botoes">
+      <a href="{{ url_for('dashboard') }}"><button>🏠 Dashboard</button></a>
+      <a href="{{ url_for('sair') }}"><button>🚪 Sair</button></a>
+    </div>
+  </div>
+</body>
+</html>
